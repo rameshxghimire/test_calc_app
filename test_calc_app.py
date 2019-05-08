@@ -51,137 +51,104 @@ def apps_functionality():
     - the division of zero by any number.
     :return: None
     """
-    # addition
     # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
+    rand_int_num = str(random.randint(0, 9))
+    neg_rand_int_num = "-" + str(random.randint(0, 9))
+    all_variables = [rand_int_num, neg_rand_int_num, "0"]
+    operations = ["+", "-", "*", "/", "="]
+
+    # addition of two integer numbers
     try:
-        # first random integer for addition
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # sum
-        patg.typewrite("+")
-
-        # second random integer for addition
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | integer addition working.")
-
+        patg.typewrite("esc")
+        for num in range(2):
+            patg.typewrite(all_variables[0])
+            num += 1
+            if num == 1:
+                patg.typewrite(operations[0])
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | integer addition working.")
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
-    # subtraction
-    # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
+    # subtraction of two negative numbers
     try:
-        # first random negative integer for subtraction
-        patg.typewrite("-")
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # subtract
-        patg.typewrite("-")
-
-        # second random negative integer for subtraction
-        patg.typewrite("-")
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | negative integer subtraction working.")
-
+        patg.typewrite("esc")
+        for num in range(2):
+            patg.typewrite(all_variables[1])
+            num += 1
+            if num == 1:
+                patg.typewrite(operations[1])
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | negative integer subtraction working.")
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
-    # multiplication
-    # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
+    # multiplication of two integer numbers
     try:
-        # first random integer for multiplication
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # multiply
-        patg.typewrite("*")
-
-        # second random integer for multiplication
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | multiplication working.")
-
+        patg.typewrite("esc")
+        for num in range(2):
+            patg.typewrite(all_variables[0])
+            num += 1
+            if num == 1:
+                patg.typewrite(operations[2])
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | multiplication working.")
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
-    # division
-    # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
+    # division of two integer numbers
     try:
-        # first random integer for division
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # devide
-        patg.typewrite("/")
-
-        # second random integer for division
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | division working.")
-
+        patg.typewrite("esc")
+        for num in range(2):
+            patg.typewrite(all_variables[0])
+            num += 1
+            if num == 1:
+                patg.typewrite(operations[3])
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | division working.")
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
-    # division by zero
-    # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
+    # division of a number by zero
     try:
-        # a random integer for division
-        patg.typewrite(str(random.randint(0, 9)))
-
-        # devide
-        patg.typewrite("/")
-
-        # zero
-        patg.typewrite("0")
-
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | division by zero working.")
-
+        patg.typewrite("esc")
+        num = 0
+        while True:
+            num += 1
+            if num == 1:
+                patg.typewrite(all_variables[0])
+                patg.typewrite(operations[3])
+            elif num ==2:
+                patg.typewrite("0")
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | division by zero working.")
+                break
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
     # division of zero by a number
-    # clear the calculator screen
-    patg.typewrite("esc")
-    patg.typewrite("esc")
     try:
-        # zero
-        patg.typewrite("0")
-
-        # devide
-        patg.typewrite("/")
-
-        # a random integer
-        patg.typewrite(str(random.randint(0, 9)))
-        wait(2)
-        # equal
-        patg.typewrite("=")
-        print("Test Passed. | division of zero by an integer working.")
-
-        # clear the screen
         patg.typewrite("esc")
-        patg.typewrite("esc")
-
+        num = 0
+        while True:
+            num += 1
+            if num == 1:
+                patg.typewrite("0")
+                patg.typewrite(operations[3])
+            elif num ==2:
+                patg.typewrite(all_variables[0])
+            else:
+                patg.typewrite(operations[-1])
+                print("Test Passed. | division of zero by an integer working.")
+                patg.typewrite("esc")
+                break
     except Exception as e:
-        print("test failed because: ", e)
+        print("Test failed because ", e)
 
 
 # wrap the basic_operation & apps_functionality functions in main function and call upon execution
