@@ -31,17 +31,13 @@ def basic_operations():
             print("test failed because: ", e)
     # check if the clear, sum and equal keys are working
     # corresponding key for clear, sum and equal on keyboard are: esc, + and return keys (or "=" key) respectively
-    try:
-        patg.typewrite("esc")
-        patg.typewrite("esc")
-        print("Test Passed. | clear key working.")
-        patg.typewrite("+")
-        print("Test Passed. | sum key working.")
-        patg.typewrite("esc")
-        patg.typewrite("=")
-        print("Test Passed. | equal key working.")
-    except Exception as e:
-        print("test failed because: ", e)
+    keys_to_test = ["esc", "+", "="]
+    for key in keys_to_test:
+        try:
+            patg.typewrite(key)
+            print("Test Passed. | ", key, "key working.")
+        except Exception as e:
+            print("Test failed because ", e)
 
 
 def apps_functionality():
