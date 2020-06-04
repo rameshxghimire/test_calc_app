@@ -54,14 +54,14 @@ def apps_functionality():
     # clear the calculator screen
     rand_int_num = str(random.randint(0, 9))
     neg_rand_int_num = "-" + str(random.randint(0, 9))
-    all_variables = [rand_int_num, neg_rand_int_num, "0"]
+    all_variations = [rand_int_num, neg_rand_int_num, "0"]
     operations = ["+", "-", "*", "/", "="]
 
     # addition of two integer numbers
     try:
         patg.typewrite("esc")
         for num in range(2):
-            patg.typewrite(all_variables[0])
+            patg.typewrite(all_variations[0])
             num += 1
             if num == 1:
                 patg.typewrite(operations[0])
@@ -75,7 +75,7 @@ def apps_functionality():
     try:
         patg.typewrite("esc")
         for num in range(2):
-            patg.typewrite(all_variables[1])
+            patg.typewrite(all_variations[1])
             num += 1
             if num == 1:
                 patg.typewrite(operations[1])
@@ -89,7 +89,7 @@ def apps_functionality():
     try:
         patg.typewrite("esc")
         for num in range(2):
-            patg.typewrite(all_variables[0])
+            patg.typewrite(all_variations[0])
             num += 1
             if num == 1:
                 patg.typewrite(operations[2])
@@ -103,7 +103,7 @@ def apps_functionality():
     try:
         patg.typewrite("esc")
         for num in range(2):
-            patg.typewrite(all_variables[0])
+            patg.typewrite(all_variations[0])
             num += 1
             if num == 1:
                 patg.typewrite(operations[3])
@@ -120,7 +120,7 @@ def apps_functionality():
         while True:
             num += 1
             if num == 1:
-                patg.typewrite(all_variables[0])
+                patg.typewrite(all_variations[0])
                 patg.typewrite(operations[3])
             elif num ==2:
                 patg.typewrite("0")
@@ -141,7 +141,7 @@ def apps_functionality():
                 patg.typewrite("0")
                 patg.typewrite(operations[3])
             elif num ==2:
-                patg.typewrite(all_variables[0])
+                patg.typewrite(all_variations[0])
             else:
                 patg.typewrite(operations[-1])
                 print("Test Passed. | division of zero by an integer working.")
