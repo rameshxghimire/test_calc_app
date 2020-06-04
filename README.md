@@ -1,4 +1,4 @@
-_A Python script to test a GUI app_
+_A Python script to test a GUI app by using pyautogui_
 
 the main script file name is test_calc_app.py
 
